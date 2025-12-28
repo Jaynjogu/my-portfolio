@@ -1976,7 +1976,7 @@ footer {
         </div>
     </section>
 
-   <!-- Contact Section -->
+ <!-- Contact Section -->
 <section id="contact" class="contact">
     <div class="container">
         <div class="section-title fade-in">
@@ -2033,7 +2033,21 @@ footer {
             <!-- Contact Form -->
             <div class="contact-form-container fade-in">
                 <h3>Send Me a Message</h3>
-                <form id="contactForm" class="contact-form">
+                <form 
+                    id="contactForm" 
+                    class="contact-form"
+                    action="https://formsubmit.co/jaynjogu244@gmail.com" 
+                    method="POST"
+                    onsubmit="return handleFormSubmit(event)"
+                >
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - Portfolio">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="#contact">
+                    <input type="hidden" name="_autoresponse" value="Thank you for your message! I've received it and will get back to you within 24 hours. - Jay Njuguna">
+                    <input type="text" name="_honey" style="display:none">
+                    
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
@@ -2056,7 +2070,7 @@ footer {
                     
                     <div class="form-group">
                         <label for="project-type">Project Type</label>
-                        <select id="project-type" name="project-type">
+                        <select id="project-type" name="project_type">
                             <option value="">Select project type</option>
                             <option value="web-development">Web Development</option>
                             <option value="data-analysis">Data Analysis</option>
@@ -2073,24 +2087,25 @@ footer {
                     </div>
                     
                     <div class="form-footer">
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i> Send Message
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> <span id="submitText">Send Message</span>
+                            <span id="submitLoading" style="display:none"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
                         </button>
                         <div class="form-note">
                             <i class="fas fa-info-circle"></i> I'll respond within 24 hours
                         </div>
                     </div>
                     
-                    <div id="form-success" class="form-success-message">
+                    <div id="form-success" class="form-success-message" style="display:none;">
                         <i class="fas fa-check-circle"></i>
                         <h4>Message Sent Successfully!</h4>
                         <p>Thank you for reaching out. I'll get back to you soon.</p>
                     </div>
                     
-                    <div id="form-error" class="form-error-message">
+                    <div id="form-error" class="form-error-message" style="display:none;">
                         <i class="fas fa-exclamation-circle"></i>
                         <h4>Something went wrong!</h4>
-                        <p>Please try again or email me directly at james@example.com</p>
+                        <p>Please try again or email me directly at jaynjogu244@gmail.com</p>
                     </div>
                 </form>
             </div>
